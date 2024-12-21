@@ -5,50 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Clock Widget</title>
   <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      Width: 100%;
-            min-height: 100vh;
-
+    html, body {
+      height: 100%; /* Ensure body and html fill the entire height of the viewport */
       margin: 0;
-      background-color: transparent;
+      padding: 0;
       font-family: 'Poppins', sans-serif;
-      overflow: hidden; /* Prevents any overflow from breaking the layout */
+      display: flex;
+      justify-content: center;x
+      align-items: center;
+      background-color: transparent;
+      overflow: hidden; /* Prevents scrolling */
     }
 
     .clock {
-      font-size: 30px;
+      font-size: 15vw; /* Scales text based on viewport width */
+
       font-weight: 100;
       color: #ffffff;
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-      padding: 10px 20px;
+      padding: 5vh 10vw; /* Adjust padding to give spacing on all devices */
       background: linear-gradient(135deg, #CF0726, #000000);
       border-radius: 10px;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-      border: 1px solid #ffffff; 
+      border: 1px solid #ffffff;
+      text-align: center;
       max-width: 100%; /* Allow it to scale */
-      text-align: center;
-      width: 100%;
-      Max-hight: 100%; /* Allow it to scale */
-      text-align: center;
-      hight: 100%;
-      box-sizing: border-box;
-      font-size: 20vw; /* Scales text based on the view width */
+      max-height: 100%; /* Allow it to scale */
+      width: 100%; /* Fill full width of viewport */
+      height: 100%; /* Fill full height of viewport */
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    /* For smaller screens like mobile, reduce the size */
+    /* For smaller screens, reduce the clock size */
     @media (max-width: 600px) {
       .clock {
-        font-size: 30px;
+        font-size: 25vw; /* Smaller font-size for mobile screens */
+        padding: 5vh 5vw; /* Adjust padding for mobile */
       }
     }
 
   </style>
 </head>
-
 
 <body>
   <div class="clock" id="clock"></div>
@@ -61,6 +60,5 @@
     setInterval(updateClock, 1000);
     updateClock();
   </script>
-
 </body>
 </html>
