@@ -61,8 +61,8 @@ header .logo {
 .hero {
   text-align: center;
   padding: 6rem 1rem;
-  background: #ff1a1a;
-  color: ##E71032;
+  background: ##CF0726;
+  color: #E71032;
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
 
