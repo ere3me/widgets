@@ -3,27 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clock</title>
+  <title>Clock Widget</title>
   <style>
     body {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      height: 100%;
       margin: 0;
       background-color: transparent;
       font-family: 'Poppins', sans-serif;
+      overflow: hidden; /* Prevents any overflow from breaking the layout */
     }
-    
+
     .clock {
-      font-size: 30px;
-      font-weight: 200;
+      font-size: 40px;
+      font-weight: 300;
       color: #ffffff;
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-      padding: 20px;
+      padding: 10px 20px;
       background: linear-gradient(135deg, #CF0726, #000000);
       border-radius: 10px;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      border: 1px solid #ffffff; 
+      max-width: 100%; /* Allow it to scale */
+      text-align: center;
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 25vw; /* Scales text based on the view width */
+    }
+
+    /* For smaller screens like mobile, reduce the size */
+    @media (max-width: 600px) {
+      .clock {
+        font-size: 30px;
+      }
     }
 
   </style>
