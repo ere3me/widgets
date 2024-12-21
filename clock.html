@@ -33,7 +33,8 @@
   <script>
     function updateClock() {
       const clock = document.getElementById("clock");
-      clock.textContent = new Date().toLocaleTimeString();
+      const options = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+      clock.textContent = new Date().toLocaleTimeString('en-US', options);
     }
     setInterval(updateClock, 1000);
     updateClock();
