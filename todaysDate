@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date Widget</title>
+  <style>
+    html, body {
+      height: 100%; /* Ensure body and html fill the entire height of the viewport */
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
+      overflow: hidden; /* Prevent scrolling */
+    }
+
+    .date-widget {
+      font-size: 3vw; /* Adjusted for displaying two lines of text */
+      font-weight: 100;
+      color: #ffffff;
+      text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+      padding: 2vh 5vw; /* Adjust padding */
+      background: linear-gradient(135deg, #CF0726, #000000);
+      border-radius: 15px; /* Slightly rounded corners */
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      border: 1px solid #ffffff;
+      text-align: center;
+      width: 70%; /* Adjust the width for multiple lines */
+      height: auto; /* Dynamically adjusts for content */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    /* For smaller screens, reduce the widget size */
+    @media (max-width: 400px) {
+      .date-widget {
+        font-size: 5vw; /* Smaller font size for mobile screens */
+        padding: 10vh 10vw; /* Adjust padding for mobile */
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="date-widget" id="dateWidget"></div>
+
+  <script>
+    function gregorianToHijri(date) {
+      const baseHijriDate = { year: 1446, month: 6, day: 22 }; // Jumada II 22, 1446
+      const baseGregorianDate = new Date(2024, 11, 23); // December 23, 2024
+
+      const hijriMonthNames = [
+        "محرم", "صفر", "ربيع الأول", "ربيع الآخر",
+        "جمادى الأولى", "جمادى الآخرة", "رجب", "شعبان",
+        "رمضان", "شوال", "ذو القعدة", "ذو الحجة"
+      ];
+
+      const hijriMonthDays = [30, 29, 30, 29, 30, 29, 30, 29, 30, 29, 30, 29];
+      const dayDifference = Math.round((date - baseGregorianDate) / (1000 * 60 * 60 * 24));
+
+      let currentHijriYear = baseHijriDate.year;
+      let currentHijriMonth = baseHijriDate.month - 1; 
+      let currentHijriDay = baseHijriDate.day + dayDifference;
+
+      while (currentHijriDay > hijriMonthDays[currentHijriMonth]) {
+        currentHijriDay -= hijriMonthDays[currentHijriMonth];
+        currentHijriMonth++;
+        if (currentHijriMonth >= 12) {
+          currentHijriMonth = 0;
+          currentHijriYear++;
+        }
+      }
+
+      while (currentHijriDay <= 0) {
+        currentHijriMonth--;
+        if (currentHijriMonth < 0) {
+          currentHijriMonth = 11;
+          currentHijriYear--;
+        }
+        currentHijriDay += hijriMonthDays[currentHijriMonth];
+      }
+
+      return {
+        year: currentHijriYear,
+        monthName: hijriMonthNames[currentHijriMonth],
+        day: currentHijriDay,
+      };
+    }
+
+    function updateDateWidget() {
+      const today = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const gregorianDate = today.toLocaleDateString('en-US', options);
+
+      const hijriDate = gregorianToHijri(today);
+      const hijriDateText = `هجري: ${hijriDate.day} ${hijriDate.monthName} ${hijriDate.year} هـ`;
+
+      const widget = document.getElementById("dateWidget");
+      widget.innerHTML = `
+        <div>${gregorianDate}</div>
+        <div>${hijriDateText}</div>
+      `;
+    }
+
+    updateDateWidget();
+  </script>
+</body>
+</html>
