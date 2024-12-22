@@ -11,37 +11,37 @@
       padding: 0;
       font-family: 'Poppins', sans-serif;
       display: flex;
-      justify-content: center;x
+      justify-content: center;
       align-items: center;
       background-color: transparent;
       overflow: hidden; /* Prevents scrolling */
     }
 
     .clock {
-      font-size: 15vw; /* Scales text based on viewport width */
-
-      font-weight: 100;
+      font-size: 10vw; /* Initial font size scaled based on viewport width */
+      font-weight: 50;
       color: #ffffff;
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-      padding: 5vh 10vw; /* Adjust padding to give spacing on all devices */
+      padding: 5vh 10vw; /* Padding to give spacing on all devices */
       background: linear-gradient(135deg, #CF0726, #000000);
-      border-radius: 10px;
+      border-radius: 50%; /* Rounded borders */
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
       border: 1px solid #ffffff;
       text-align: center;
-      max-width: 100%; /* Allow it to scale */
-      max-height: 100%; /* Allow it to scale */
-      width: 100%; /* Fill full width of viewport */
-      height: 100%; /* Fill full height of viewport */
+      max-width: 90%; /* Maximum width for flexibility */
+      max-height: 90%; /* Maximum height for flexibility */
+      width: 60%; /* Default to 60% width of the viewport */
+      height: 60%; /* Default to 60% height of the viewport */
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
     }
 
     /* For smaller screens, reduce the clock size */
     @media (max-width: 600px) {
       .clock {
-        font-size: 25vw; /* Smaller font-size for mobile screens */
+        font-size: 20vw; /* Even smaller font size for mobile screens */
         padding: 5vh 5vw; /* Adjust padding for mobile */
       }
     }
