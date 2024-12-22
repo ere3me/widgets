@@ -22,16 +22,14 @@
       font-weight: 100;
       color: #ffffff;
       text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
-      padding: 80vh 80vw; /* Padding to give spacing on all devices */
+      padding: 2vh 5vw; /* Adjust padding */
       background: linear-gradient(135deg, #CF0726, #000000);
-      border-radius: 10%; /* Rounded borders */
+      border-radius: 15px; /* Slightly rounded corners */
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
       border: 1px solid #ffffff;
       text-align: center;
-      max-width: 80%; /* Maximum width for flexibility */
-      max-height: 80%; /* Maximum height for flexibility */
-      width: 60%; /* Default to 60% width of the viewport */
-      height: 60%; /* Default to 60% height of the viewport */
+      width: 50%; /* Adjust the width */
+      height: 20%; /* Adjust the height */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -41,8 +39,8 @@
     /* For smaller screens, reduce the clock size */
     @media (max-width: 400px) {
       .clock {
-        font-size: 5vw; /* Even smaller font size for mobile screens */
-        padding: 5vh 5vw; /* Adjust padding for mobile */
+        font-size: 10vw; /* Smaller font size for mobile screens */
+        padding: 10vh 10vw; /* Adjust padding for mobile */
       }
     }
 
@@ -54,7 +52,7 @@
   <script>
     function updateClock() {
       const clock = document.getElementById("clock");
-      const options = { hour: '2-digit', minute: '2-digit', hour12: true };
+      const options = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
       clock.textContent = new Date().toLocaleTimeString('en-US', options);
     }
     setInterval(updateClock, 1000);
