@@ -98,7 +98,7 @@
       const gregorianDate = today.toLocaleDateString('en-US', options);
 
       const hijriDate = gregorianToHijri(today);
-      const hijriDateText = `هجري: ${hijriDate.day} ${hijriDate.monthName} ${hijriDate.year} هـ`;
+      const hijriDateText = ` ${hijriDate.day} ${hijriDate.monthName} ${hijriDate.year} هـ`;
 
       const widget = document.getElementById("dateWidget");
       widget.innerHTML = `
