@@ -64,10 +64,13 @@ header .logo {
 .hero {
   text-align: center;
   padding: 7rem 1rem;
-  background: linear-gradient(135deg, #CF0726, #FF3B30);
-  color: #fff;
+  background: linear-gradient(135deg, #CF0726, #000000); /* Updated gradient */
+  color: #ffffff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Text shadow */
+  border-radius: 10px; /* Border radius */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Box shadow */
+  border: 1px solid #ffffff; /* Border color */
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .hero h1 {
