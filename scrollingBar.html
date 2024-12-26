@@ -1,0 +1,135 @@
+<div class="scrolling-bar">
+  <div class="scroll-container">
+    <div class="scrolling-content">
+      <!-- Define the buttons with specific links -->
+      <a href="https://www.pinterest.com/ere3me/" target="_blank" class="item-link">
+        <button class="item-btn">Pinterest</button>
+      </a>
+      <a href="https://www.tiktok.com/@ere3me" target="_blank" class="item-link">
+        <button class="item-btn">TikTok</button> 
+      </a>
+      <a href="https://www.google.com/maps/contrib/111374935548925362794/contribute/@32.3785556,18.7627128,5z/data=!4m3!8m2!3m1!1e1?entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="item-link">
+        <button class="item-btn">Maps</button>
+      </a>
+      <a href="https://www.youtube.com/@ere3me/videos" target="_blank" class="item-link">
+        <button class="item-btn">YouTube</button>
+      </a>
+      <a href="https://vero.co/Gvg-LfjfRwRMgQ99rhfk3cND" target="_blank" class="item-link">
+        <button class="item-btn">Vero</button>
+      </a>
+      <a href="https://link.gettap.co/Rusul" target="_blank" class="item-link">
+        <button class="item-btn">Tap</button>
+      </a>
+      <a href="https://github.com/ere3me" target="_blank" class="item-link">
+        <button class="item-btn">GitHub</button>
+      </a>
+    </div>
+
+
+
+    <div class="scrolling-content duplicate">
+      <!-- Duplicate the same buttons for continuous effect -->
+      <a href="https://www.pinterest.com/ere3me/" target="_blank" class="item-link">
+        <button class="item-btn">Pinterest</button>
+      </a>
+      <a href="https://www.tiktok.com/@ere3me" target="_blank" class="item-link">
+        <button class="item-btn">TikTok</button> 
+      </a>
+      <a href="https://www.google.com/maps/contrib/111374935548925362794/contribute/@32.3785556,18.7627128,5z/data=!4m3!8m2!3m1!1e1?entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="item-link">
+        <button class="item-btn">Maps</button>
+      </a>
+      <a href="https://www.youtube.com/@ere3me/videos" target="_blank" class="item-link">
+        <button class="item-btn">YouTube</button>
+      </a>
+      <a href="https://vero.co/Gvg-LfjfRwRMgQ99rhfk3cND" target="_blank" class="item-link">
+        <button class="item-btn">Vero</button>
+      </a>
+      <a href="https://link.gettap.co/Rusul" target="_blank" class="item-link">
+        <button class="item-btn">Tap</button>
+      </a>
+      <a href="https://github.com/ere3me" target="_blank" class="item-link">
+        <button class="item-btn">GitHub</button>
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .scrolling-bar {
+    width: 80%;  /* Adjust width of the container */
+    max-width: 900px;  /* Max width of the container */
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #CF0726, #000000);
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 10px;
+    position: relative;
+  }
+
+  .scroll-container {
+    flex-grow: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+  }
+
+  .scrolling-content {
+    display: flex;
+    gap: 50px; /* Increased space between buttons */
+    padding-right: 50px; /* To ensure the last item doesn't appear instantly */
+    animation: scroll-animation 50s linear infinite; /* Slower animation duration */
+  }
+
+  .scrolling-content.duplicate {
+    display: flex;
+    gap: 50px;
+    padding-right: 50px;
+    animation: scroll-animation 50s linear infinite; /* Matching speed */
+  }
+
+  .item-btn {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    color: #CF0726;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .item-btn:hover {
+    background-color: rgba(255, 255, 255, 1);
+    color: #000000;
+    transform: scale(1.1);
+  }
+
+  .item-link {
+    text-decoration: none;
+  }
+
+  @keyframes scroll-animation {
+    0% {
+      transform: translateX(0); /* Start at the right */
+    }
+    100% {
+      transform: translateX(-100%); /* Scroll out completely */
+    }
+  }
+
+  @media (max-width: 768px) {
+    .scrolling-bar {
+      flex-direction: column;
+    }
+
+    .item-btn {
+      font-size: 0.8rem;
+      padding: 6px 10px;
+    }
+  }
+</style>
